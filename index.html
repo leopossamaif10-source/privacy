@@ -191,7 +191,7 @@ function togglePromo(){var s=document.getElementById('promos'),c=document.getEle
 function switchTab(el){document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active');});el.classList.add('active');}
 function switchFilter(el,filter){document.querySelectorAll('.filter').forEach(function(f){f.classList.remove('active');});el.classList.add('active');['todos','fotos','videos','pagos'].forEach(function(g){var e=document.getElementById('grid-'+g);if(e)e.style.display=(g===filter)?'grid':'none';});}
 function startChecking(txid){
-  document.getElementById('checking-box').style.display='block';
+  document.getElementById('checking-box').style.display='none';
   checkInterval=setInterval(function(){
     fetch('/api/check?txid='+txid)
     .then(function(r){return r.json();})
